@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>
+    {{title}}
+</h1>
+
+<div mat-dialog-content>
+    <p>{{message}}</p>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6 col-6">
+        <input type="number" placeholder = "Re-enter the disk space amount" #box2 >
+    </div>
+</div>
+
+   
+    <div mat-dialog-actions>
+        <button mat-button (click)="onDismiss()">No</button>
+        <button mat-raised-button color="primary" (click)="onConfirm(box2.value)">Yes</button>
+    </div>

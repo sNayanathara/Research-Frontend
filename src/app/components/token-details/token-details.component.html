@@ -1,0 +1,35 @@
+ <table mat-table [dataSource]="files" class="token-summary-table">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Token </th>
+    <td mat-cell > {{accountAddress}} </td>
+    </ng-container>
+
+    <!-- Rental Column -->
+    <ng-container matColumnDef="rental">
+    <th mat-header-cell *matHeaderCellDef> Rental </th>
+    <td mat-cell > {{rental}} </td>
+    </ng-container>
+
+    <!-- Received Column -->
+    <ng-container matColumnDef="received">
+    <th mat-header-cell *matHeaderCellDef> Receieved </th>
+    <td mat-cell > {{received}} </td>
+    </ng-container>
+
+    <!-- Rewards Column -->
+    <ng-container matColumnDef="rewards">
+    <th mat-header-cell *matHeaderCellDef> Rewards </th>
+    <td mat-cell > {{rewards}} </td>
+    </ng-container>
+
+    <!-- Total Column -->
+    <ng-container matColumnDef="total">
+    <th mat-header-cell *matHeaderCellDef> Total </th>
+    <td mat-cell > {{ totalTokens }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="_displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: _displayedColumns;"></tr>
+</table>
+ 

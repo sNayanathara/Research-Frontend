@@ -1,0 +1,60 @@
+<div fxFlexFill fxLayout="column">
+    <mat-toolbar fxLayoutGap="16px">
+      <span fxFlex>Distributed File Store</span>
+      <!-- <mat-slide-toggle [(ngModel)]="_multiple">Multiple</mat-slide-toggle>
+      <button mat-stroked-button color="primary" (click)="_reset()">Reset</button> -->
+    </mat-toolbar>
+    <div fxFlex>
+      <mat-tab-group class="tabGroup">
+        <mat-tab label="Upload">
+          <div class="tab-container" fxLayoutAlign="center center">
+            <button #buttonPicker="appFilePicker" mat-raised-button color="primary" appFilePicker [multiple]="_multiple" (filesChanged)="_onFilesChanged($event)" (filesReset)="_onReset()">
+                      Upload
+            </button>
+          </div> 
+          <mat-divider></mat-divider>
+          <div>
+            <mat-toolbar>
+              <span>Selected Files:</span>
+            </mat-toolbar>
+            <app-selected-files-table [files]="_selectedFiles"></app-selected-files-table>
+          </div>
+        </mat-tab>
+        <mat-tab label="Retrieve">
+          <div class="tab-container" fxLayoutAlign="center center">
+            <div>
+              <app-file-retrieve></app-file-retrieve>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+      <div>
+        <!-- <mat-toolbar>
+          <span>Token Summary:</span>
+        </mat-toolbar>
+        <app-token-details></app-token-details> -->
+      </div>
+        </mat-tab>
+        <mat-tab label="Share Disk Space">
+          <div class="tab-container" fxLayoutAlign="center center">
+            <div>
+              <app-disk-space-share></app-disk-space-share>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+      <div>
+        <!-- <mat-toolbar>
+          <span>Token Summary:</span>
+        </mat-toolbar>
+        <app-token-details></app-token-details> -->
+      </div>
+        </mat-tab>
+      </mat-tab-group>
+      
+      <!-- <div>
+        <mat-toolbar>
+          <span>Selected Files:</span>
+        </mat-toolbar>
+        <app-selected-files-table [files]="_selectedFiles"></app-selected-files-table>
+      </div>  -->
+    </div>
+  </div>
